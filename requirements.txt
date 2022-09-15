@@ -3,3 +3,4 @@ django-froala-editor==4.0.13
 django-jazzmin==2.5.0
 djangorestframework==3.13.1
 Pillow==9.2.0
+gunicorn==19.0.0
