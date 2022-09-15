@@ -1,4 +1,3 @@
-os
 Django==4.0.6
 django-froala-editor==4.0.13
 django-jazzmin==2.5.0
