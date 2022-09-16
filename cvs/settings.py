@@ -83,10 +83,14 @@ WSGI_APPLICATION = 'cvs.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+   'default': {
+       'ENGINE': 'django.db.backends.postgresql',
+       'NAME': 'dfmfbll2l3tmrb',
+       'USER': 'axdglvmdivhjcv',
+       'PASSWORD': '13337ab4ab791f4a9540ccb29f2e5c7ce7bab37a40a429f9d716966f33fac0f2',
+       'HOST': 'ec2-52-4-87-74.compute-1.amazonaws.com',
+       'PORT': '5432',
+   }
 }
 
 
