@@ -1,5 +1,3 @@
-from ast import Return
-import imp
 from django.db import models
 from django.contrib.auth.models import User
 from .config import *
@@ -33,4 +31,3 @@ class Message(models.Model):
     def __str__(self):
         val = self.first_name+" "+self.subject
         return val
-    
