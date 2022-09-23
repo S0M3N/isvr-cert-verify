@@ -29,6 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'isvr-cert.herokuapp.com', 
+    'isvr.herokuapp.com', 
     '127.0.0.1'
 ]
 
