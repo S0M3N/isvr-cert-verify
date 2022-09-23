@@ -19,7 +19,121 @@
 
         :root {
             --primary-color: #a517ba;
+            --primary-color2: #703a79;
         }
+
+        .dark {
+            background: #110f16;
+        }
+
+
+        .light {
+            background: #f3f5f7;
+        }
+
+        a,
+        a:hover {
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .postcard {
+            flex-wrap: wrap;
+            display: flex;
+
+            box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.66);
+            border-radius: 10px;
+            margin: 0 0 2rem 0;
+            overflow: hidden;
+            position: relative;
+            color: #ffffff;
+        }
+
+        .dark {
+            background-color: #18151f;
+        }
+
+        .light {
+            background-color: #e1e5ea;
+        }
+
+        .t-dark {
+            color: #18151f;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        h1,
+        .h1 {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        .small {
+            font-size: 80%;
+        }
+
+        .postcard__title {
+            font-size: 1.75rem;
+        }
+
+        .postcard__img {
+            max-height: 180px;
+            width: 100%;
+            object-fit: cover;
+            position: relative;
+        }
+
+        .postcard__img_link {
+            display: contents;
+        }
+
+        .postcard__bar {
+            width: 50px;
+            height: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            background-color: #424242;
+            transition: width 0.2s ease;
+        }
+
+        .postcard__text {
+            padding: 1.5rem;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .postcard__preview-txt {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: justify;
+            height: 100%;
+        }
+
+        .postcard__tagbox {
+            display: flex;
+            flex-flow: row wrap;
+            font-size: 14px;
+            margin: 20px 0 0 0;
+            padding: 0;
+            justify-content: center;
+        }
+
+        .tag__item {
+            display: inline-block;
+            background: rgba(83, 83, 83, 0.4);
+            border-radius: 3px;
+            padding: 2.5px 10px;
+            margin: 0 5px 5px 0;
+            cursor: default;
+            user-select: none;
+            transition: background-color 0.3s;
+        }
+
 
         * {
             margin: 0;
@@ -467,8 +581,15 @@
             min-height: 100vh;
         }
 
-        .card{
+        .card {
+            color: #111;
+            min-height: 555px;
             margin-bottom: 10px;
+            transition: 0.3s ease-in-out transform;
+        }
+
+        .card:hover{
+            transform: scale(1.08);
         }
     </style>
 </head>
@@ -476,7 +597,8 @@
 <body>
     <section id="nav-bar">
         <nav class="navbar navbar-expand-lg navbar-dark">
-            <a class="navbar-brand" href="/"><img src="https://github.com/S0M3N/isvr-app/blob/master/assets/logo.png?raw=true" alt="ISVR"></a>
+            <a class="navbar-brand" href="/"><img
+                    src="https://github.com/S0M3N/isvr-app/blob/master/assets/logo.png?raw=true" alt="ISVR"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -484,16 +606,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Home</a>
+                        <a class="nav-link" href="https://isvr.org.in/#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">About Us</a>
+                        <a class="nav-link" href="https://isvr.org.in/#about">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#services">Services</a>
+                        <a class="nav-link" href="https://isvr.org.in/#services">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Testimonials</a>
+                        <a class="nav-link" href="https://isvr.org.in/#">Testimonials</a>
                     <li class="nav-item">
                         <a class="nav-link" href="https://isvr-cert.herokuapp.com/#contact" target="_blank">Contact
                             Us</a>
@@ -513,22 +635,6 @@
                 <i class="fa-solid fa-sun mx-4" id="icon"></i>
             </div>
         </nav>
-    </section>
-    <section id="banner">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <p class="promo-title">We build the <br>Future!</p>
-                    <p>Curiosity is the essence of our existence. Reach us for the Rocketry, Drone Technology, and
-                        research in Space Field.</p>
-                    <a href="https://isvr-cert.herokuapp.com/#contact"
-                        class="btn my-4 px-4 py-2 rounded-pill text-white bg-primary-color">Contact Us</a>
-                </div>
-                <div class="col-md-6 text-center">
-                    <img src="https://raw.githubusercontent.com/S0M3N/isvr-app/master/assets/bannerimg.png" class="img-fluid" alt="">
-                </div>
-            </div>
-        </div>
     </section>
     {% block body %}
     {% endblock %}
@@ -597,9 +703,9 @@
     <script>
         var icon = document.getElementById("icon");
 
-    icon.onclick = function () {
-        document.body.classList.toggle("dark-mode")
-    }
+        icon.onclick = function () {
+            document.body.classList.toggle("dark-mode")
+        }
 
     </script>
 </body>
