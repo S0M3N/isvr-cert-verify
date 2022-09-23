@@ -25,6 +25,7 @@ class Message(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     email = models.EmailField(max_length=200)
+    phone = models.CharField(max_length=15, default="")
     subject = models.CharField(max_length=50)
     message = models.TextField()
 
