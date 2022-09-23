@@ -30,15 +30,18 @@ def search_cert(request):
 def contact(request):
     if request.method =="POST":
         try:
-            messages.success(request, 'Message send successfully, we will connect to you soon')
             fname = request.POST['fname']
             lname = request.POST['lname']
             email = request.POST['email']
             contact = request.POST['contact']
             subject = request.POST['subject']
             message = request.POST['message']
-            val = Message(first_name = fname, last_name = lname, email = email, phone = contact, subject = subject, message = message)
-            val.save()
+            if fname=="" or lname == "" or email == "" or contact == "" or subject == "" or message == "":
+                messages.error(request,'All fields are Required.') 
+            else:
+                val = Message(first_name = fname, last_name = lname, email = email, phone = contact, subject = subject, message = message)
+                val.save()
+                messages.success(request, 'Message send successfully, we will connect to you soon')
         except:
             messages.error(request, 'Some error happened, please try again later.')
     return render(request, 'contact.html')

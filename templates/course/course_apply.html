@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% block title %}ISVR | Contact{% endblock %}
+{% block body %}
+{% load static %}
+
+<style>
+    .bg-contact {
+        background: linear-gradient(to right, #a517ba, #5f1782);
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+{% for message in messages %}
+<div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+    <strong>{{message}}</strong>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endfor %}
+
+<section id="contact">
+    <div class="container mt-4">
+        <h2 class="display-6 text-center">
+            Apply for <span class="text-primary-color">your prefered</span> Course
+        </h2>
+    </div>
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-6 bg-light text-dark rounded">
+                <h2 class="my-4 mx-3">Apply Now</h2>
+                <form action="/courses/apply/" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" class="form-control" id="fname" name="fname"
+                                    placeholder="First name">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" id="lname" name="lname" placeholder="Last name">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"
+                            placeholder="Enter a valid email">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="contact" name="contact" aria-describedby="emailHelp"
+                            placeholder="Enter contact number">
+                    </div>
+                    <select class="form-control form-group" name="course" id="course">
+                        <option value="----">Select Course</option>
+                        <option value="Model Rocketry">Model Rocketry</option>
+                        <option value="Cube Satellite Communication">Cube Satellite Communication</option>
+                        <option value="Space Medicine">Space Medicine</option>
+                        <option value="Drone Technology">Drone Technology</option>
+                    </select>
+                    <select class="form-control form-group" name="month" id="month">
+                        <option value="----">Select Month</option>
+                        <option value="1 Month">1 Month</option>
+                        <option value="3 Months">3 Months</option>
+                        <option value="6 Months">6 Months</option>
+                    </select>
+                    <input type="submit" class="btn bg-primary-color text-light" value="Submit">
+                </form>
+            </div>
+            <div class="col-md-6 rounded bg-contact">
+                <h1 class="text-center text-light my-4">
+                    Apply for your prefered Course
+                </h1>
+                <p class="my-4 mx-2 text-light">
+                    Fill the form here for your desired course and period. After the successful filling of form one of
+                    our team member will connect to you soon and guide for the further process.
+                </p>
+                <div class="mx-3">
+                    <p class="font-weight-light text-light">
+                        <i class="fa-solid fa-location-dot"></i> ISVR Research Lab, RCE, Roorkee, Uttarakhand 247667
+                    </p>
+                    <p class="font-weight-light text-light">
+                        <i class="fa-solid fa-location-dot"></i> ISVR, Jubilee Market, Laxmi Bazar, Dhenkanal 759001
+                    </p>
+                    <p class="font-weight-light text-light">
+                        <i class="fa-solid fa-phone"></i> +91 88820 54894 / +91 98610 55575
+                    </p>
+                    <p class="text-light">
+                        <i class="fa-solid fa-envelope"></i> <a href="mailto:info@isvr.org.in"
+                            class="text-light">info@isvr.org.in</a>
+                    </p>
+                </div>
+                <p class="mx-2 mt-5 text-light">Connect on Social Media</p>
+                <div class="social-icons my-3">
+                    <a href="https://www.facebook.com/isvr01/" target="_blank" class="text-light "><i
+                            class="fa-brands fa-lg fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/i_s_v_r_/" target="_blank" class="text-light "><i
+                            class="fa-brands fa-lg fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/company/indian-space-vault-and-research/" target="_blank"
+                        class="text-light "><i class="fa-brands fa-lg fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

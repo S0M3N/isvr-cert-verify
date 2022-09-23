@@ -3,9 +3,9 @@
 {% block body %}
 {% load static %}
 
-<div class="container my-3">
-    <div class="blog-post">
-        <h2 class="blog-post-title">{{std.course}}</h2>
+<div class="container my-4">
+    <div class="blog-post mb-3">
+        <h1 class="blog-post-title">{{std.course}}</h1>
         <div class="row">
             <div class="col-md-6 my-4">
                 <img class="image-100" src="{{std.git_img}}" alt="{{std.course}}">
@@ -14,10 +14,13 @@
                 {{std.course_cont}}
             </div>
         </div>
-        {{std.course_desc}}
+        <h1 class="blog-post-title">{{std.course_heading_01}}</h1>
+        <p class="mx-4">{{std.course_desc_01}}</p>
+        <h3>{{std.course_heading_02}}</h2>
+        <p class="mx-4">{{std.course_desc_02}}</p>
     </div>
 </div>
-<div class="container">
+<div class="container my-4">
     <div class="card-deck mb-3 text-dark text-center">
         <div class="card mb-4 box-shadow">
             <div class="card-header">
@@ -32,7 +35,7 @@
                     <li>Learn from our experts</li>
                     <li>24X7 Help</li>
                 </ul>
-                <a href="#courses" class="btn my-5 px-4 py-2 rounded-pill text-white bg-primary-color">Apply Now</a>
+                <a href="/courses/apply/" class="btn my-5 px-4 py-2 rounded-pill text-white bg-primary-color">Apply Now</a>
             </div>
         </div>
         <div class="card mb-4 box-shadow">
@@ -49,7 +52,7 @@
                     <li>24X7 Help</li>
                     <li>Work on major projects*</li>
                 </ul>
-                <a href="#courses" class="btn my-3 px-4 py-2 rounded-pill text-white bg-primary-color">Apply Now</a>
+                <a href="/courses/apply/" class="btn my-3 px-4 py-2 rounded-pill text-white bg-primary-color">Apply Now</a>
             </div>
         </div>
         <div class="card mb-4 box-shadow">
@@ -66,7 +69,7 @@
                     <li>24X7 Help</li>
                     <li>Work with expert's projects*</li>
                 </ul>
-                <a href="#courses" class="btn my-3 px-4 py-2 rounded-pill text-white bg-primary-color">Apply Now</a>
+                <a href="/courses/apply/" class="btn my-3 px-4 py-2 rounded-pill text-white bg-primary-color">Apply Now</a>
             </div>
         </div>
     </div>
