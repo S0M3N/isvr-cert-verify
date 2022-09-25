@@ -34,7 +34,8 @@ ALLOWED_HOSTS = [
 ]
 
 CSRF_TRUSTED_ORIGINS = [
-    'https://isvr-cert.herokuapp.com'
+    'https://isvr-cert.herokuapp.com',
+    'https://isvr.herokuapp.com'
 ]
 
 # Application definition
